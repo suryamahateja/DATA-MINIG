@@ -1,0 +1,14 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("cleaned_dataset.csv")
+
+# Count occurrences
+data = df.groupby(['user_role', 'book_category']).size().unstack()
+
+# Plot graph
+data.plot(kind='bar')
+plt.xlabel("User Role")
+plt.ylabel("Count")
+plt.title("User Role vs Book Category")
+plt.show() graph for dataset1
