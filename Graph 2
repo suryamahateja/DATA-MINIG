@@ -1,0 +1,12 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("cleaned_dataset.csv")
+
+data = df.groupby(['category', 'status']).size().unstack()
+
+data.plot(kind='bar')
+plt.xlabel("Category")
+plt.ylabel("Count")
+plt.title("Category vs Status")
+plt.show() graph for d2
